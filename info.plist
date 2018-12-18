@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0EF647C4-52EC-45E4-99CE-8327A3700964</string>
+				<string>E153B34A-1C76-4428-9019-8E5C5BE17F1A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -30,22 +30,6 @@
 	<string>Amethyst Controler</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)	if q is "fullscreen" then		tell application "System Events" to key code 20 using {shift down, control down}	else if q is "tall" then		tell application "System Events" to key code 18 using {shift down, control down}	else if q is "wide" then		tell application "System Events" to key code 19 using {shift down, control down}	else if q is "floating" then		tell application "System Events" to key code 21 using {shift down, control down}	else if q is "shrink" then		tell application "System Events" to keystroke "h" using {shift down, option down, control down}	else if q is "expand" then		tell application "System Events" to keystroke "l" using {shift down, option down, control down}	else if q is "increase" then		tell application "System Events" to keystroke "," using {shift down, option down, control down}	else if q is "decrease" then		tell application "System Events" to keystroke "." using {shift down, option down, control down}	else if q is "ccw" then		tell application "System Events" to key code 123 using {shift down, option down, control down}	else if q is "cw" then		tell application "System Events" to key code 124 using {shift down, option down, control down}	else if q is "force" then		tell application "System Events" to keystroke "z" using {shift down, option down, control down}	else if q is "float" then		tell application "System Events" to keystroke "t" using {shift down, option down, control down}	else if q is "main" then
-		delay 0.1		tell application "System Events" to key code 36 using {shift down, option down, control down}	end ifend alfred_script</string>
-				<key>cachescript</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>0EF647C4-52EC-45E4-99CE-8327A3700964</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -72,8 +56,8 @@
 				<key>runningsubtext</key>
 				<string>Please Wait</string>
 				<key>script</key>
-				<string>query=$1
-
+				<string>sh getShortcuts.sh
+query=$1
 python filter.py "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -95,22 +79,47 @@ python filter.py "$1"</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+osascript controler.scpt $query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E153B34A-1C76-4428-9019-8E5C5BE17F1A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>0EF647C4-52EC-45E4-99CE-8327A3700964</key>
-		<dict>
-			<key>xpos</key>
-			<integer>470</integer>
-			<key>ypos</key>
-			<integer>90</integer>
-		</dict>
 		<key>626E40C4-2858-4DB3-91E9-C0E104B87B7C</key>
 		<dict>
 			<key>xpos</key>
 			<integer>220</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>E153B34A-1C76-4428-9019-8E5C5BE17F1A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>420</integer>
 			<key>ypos</key>
 			<integer>90</integer>
 		</dict>
