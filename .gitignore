@@ -1,3 +1,4 @@
 .DS_Store
 controler.scpt
 settings.json
+workflow/*.pyc
